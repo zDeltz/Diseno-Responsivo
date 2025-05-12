@@ -1,2 +1,2 @@
-# Dise-o-Responsivo
+# Diseño-Responsivo
 Este es el repositorio para aprender Diseño Responsivo
