@@ -1,0 +1,93 @@
+/* 
+
+    Media Queries
+
+    Nos permiten aplicar estilos CSS específicos de acuerdo a las características del dispositivo.
+
+    Utilizan la regla '@media' para condicionar la aplicación de estos estilos y sigue la siguiente sintáxis:
+
+        @media media-type conector (media-feature-rule) {
+            Reglas de CSS que se van a aplicar cuando se cumplan estas condiciones.
+        }
+
+
+    Media Type (Tipos de medios)
+
+    * screen  ->  Pantallas de computadora, tablets o móviles.
+    * speach ->  Sitentizadores de voz.
+    * print    ->  Para documentos impresos. Imprimir la web.
+    * all       ->  Todos los dispositivos
+
+    Conectors (Contectores)
+
+    * and   ->  y  ->  Se coloca entre media-type y el media-feature
+    * or      ->  o  ->  Se usa una coma ',' para separa media-features
+    * not    ->  negación ->  Se coloca antes del media-type
+
+    Media Features
+
+    * width    ->  Ancho de la ventana del navegador
+    * height  ->  Alto de la ventana del navegador
+    * min-width  /  max-width     ->  Ancho mínimo y máximo del navegador.
+    * min-height  /  max-height  ->  Alutra mínima y máxima del navegador.
+    * resolution  ->  Densidad de pixeltes
+    * color  ->  Número de bits por color-
+
+
+*/
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo inicial de la web */
+
+body{
+    background-color: rebeccapurple;
+    font-family: Josefin Sans;
+    color: bisque;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px){
+    body {
+        background-color: royalblue;
+    }
+
+    h1{
+        font-family: Serif;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        background-color: darkseagreen;
+    }
+    h1{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px){
+    body{
+        background-color: rgb(10, 9, 9);
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1696px){
+    h1{
+        font-size: 5rem;
+    }
+}
