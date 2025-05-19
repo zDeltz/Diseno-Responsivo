@@ -1,0 +1,116 @@
+/* 
+
+    Barra de Navegación > Mobile First
+
+    1. Primero se escriben los estilos para dispositivos móviles.
+    2. Luego se aplican cambios con Media Queires  para pantallas grandes: tablets, laptops, escritorio.
+
+    Estructura General
+
+        1. Reseteamos márgenes y paddings para evitar estilos por defecto.
+        2. Usaremosflexbox para alinear y distribuir los elementos.
+        3. Aplicaremos colores, tamaños y espacios
+
+    Estilos
+
+    Móviles
+
+        -Menu en columna, centrado con fondo oscuro y texto claro.
+
+    Tablets
+
+        - El menu se convierte en fila y cambia de fondo.
+
+    Laptops
+
+        - Se añade espacio entre los elementos, se alinean a los lados y hay efecto al parar el mouse (hover)
+
+    Escritorio
+
+        - El contenido se centra dentro de un ancho máximo para mejorar la presentación.
+    
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Josefin sans;
+}
+
+/*  Estilos base Mobile */
+
+.brand {
+    padding: .75em 0.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(6, 7, 11);
+}
+
+.menu-item {
+    color: antiquewhite;
+    text-decoration: none;
+    text-align: center;
+    padding: .75em 0;
+}
+
+/* Break point 768px > Tablets */
+
+@media screen and (min-width: 768px) {
+    .nav {
+        border-bottom: 1px solid rgb(221, 221, 221);
+    }
+
+    .menu {
+        flex-direction: row;
+        background-color: white;
+    }
+
+    .menu-item {
+        color: rgb(6, 7, 11);
+        flex-grow: 1;
+    }
+}
+
+/* Break point 1024px > Laptop */
+
+@media screen and (min-width: 1024px) {
+    .nav {
+        padding: .75em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .brand {
+        padding: 0;
+    }
+
+    .menu {
+        gap: 2em;
+    }
+
+    .menu-item:hover {
+        color: salmon;
+        cursor: pointer;
+    }
+
+}
+
+
+/* Break point 1280px+ > Escritorio */
+
+@media screen and (min-width: 1280px) {
+    .nav {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+}
