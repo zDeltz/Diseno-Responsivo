@@ -1,0 +1,88 @@
+/*  
+
+    Desktop First
+
+    - Primero se escriben los estilos para pantallas grandes (escritorio).
+    - Luego se ajustan a pantallas más pequeñas (tablets y móviles) usando media queires.
+
+    Estilos Escritorio:
+
+    - .main contenedor principal centrado con un acho máximo.
+    - .container usa CSS Grid para crear 3 columnas.
+    - .item se acomodan en cada celda de la cuadricula con fondo oscuro y bordes redondeados.
+    - .item-image con un efecto viusal de opacidad y zoom al pasar el mouse.
+
+    Comportamiento Responsivo:
+
+    - Laptops < 1280px: 3 columnas
+    - Tablets < 1023px: 2 columnas
+    - Móviles < 4
+
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    height: initial;
+}
+
+body {
+    background-color: rgb(221, 213, 166);
+}
+
+/* Estilos por default para escritorio */
+
+.main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.75em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 0.75em;
+}
+
+.item {
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.item-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    opacity: 0.2;
+    scale: 1; /* Default no se tiene que poner */
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.item-image:hover {
+    opacity: 1;
+    scale: 1.05;
+}
+
+/* Tablets de 1023px */
+
+@media screen and (max-width: 1023px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Móviles de 435px */
+
+@media screen and (max-width: 435px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
